@@ -3324,7 +3324,7 @@ class _TimePickerDefaultsM2 extends _TimePickerDefaults {
 
   @override
   InputDecorationThemeData? get inputDecorationTheme {
-    return InputDecorationTheme(
+    return InputDecorationThemeData(
       contentPadding: EdgeInsets.zero,
       filled: true,
       fillColor: _hourMinuteInputColor,
@@ -3651,7 +3651,7 @@ class _TimePickerDefaultsM3 extends _TimePickerDefaults {
     final BorderRadius selectorRadius = const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(8.0)),
     ).borderRadius.resolve(Directionality.of(context));
-    return InputDecorationTheme(
+    return InputDecorationThemeData(
       contentPadding: EdgeInsets.zero,
       filled: true,
       // This should be derived from a token, but there isn't one for 'time-input'.
