@@ -1915,7 +1915,7 @@ class _DurationTextFieldState extends State<_DurationTextField> with Restoration
     final _TimePickerDefaults defaultTheme =
         theme.useMaterial3 ? _TimePickerDefaultsM3(context) : _TimePickerDefaultsM2(context);
 
-    final InputDecorationTheme inputDecorationTheme =
+    final InputDecorationThemeData? inputDecorationTheme =
         timePickerTheme.inputDecorationTheme ?? defaultTheme.inputDecorationTheme;
     InputDecoration inputDecoration = InputDecoration(
       // Prevent the error text from appearing when
@@ -3117,7 +3117,7 @@ abstract class _TimePickerDefaults extends TimePickerThemeData {
   TextStyle get hourMinuteTextStyle;
 
   @override
-  InputDecorationTheme get inputDecorationTheme;
+  InputDecorationThemeData? get inputDecorationTheme;
 
   @override
   EdgeInsetsGeometry get padding;
