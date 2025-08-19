@@ -1,3 +1,10 @@
+## 0.1.1
+
+- **FIX**: Flutter API compatibility fixes for Flutter 3.35.1 / Dart 3.9.0
+  - Fixed InputDecorationTheme -> InputDecorationThemeData? compatibility
+  - Updated method signatures to match current Flutter API
+  - Fixed nullable access patterns for InputDecorationThemeData
+
 ## 0.1.0
 
 > Note: This release has breaking changes.
