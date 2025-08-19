@@ -1923,8 +1923,8 @@ class _DurationTextFieldState extends State<_DurationTextField> with Restoration
       // TODO(tahatesser): Remove this workaround once
       // https://github.com/flutter/flutter/issues/54104
       // is fixed.
-      errorStyle: defaultTheme.inputDecorationTheme.errorStyle,
-    ).applyDefaults(inputDecorationTheme);
+      errorStyle: defaultTheme.inputDecorationTheme?.errorStyle,
+    ).applyDefaults(inputDecorationTheme!);
     // Remove the hint text when focused because the centered cursor
     // appears odd above the hint text.
     final String? hintText = focusNode.hasFocus ? null : _formattedValue;
@@ -3323,7 +3323,7 @@ class _TimePickerDefaultsM2 extends _TimePickerDefaults {
   }
 
   @override
-  InputDecorationTheme get inputDecorationTheme {
+  InputDecorationThemeData? get inputDecorationTheme {
     return InputDecorationTheme(
       contentPadding: EdgeInsets.zero,
       filled: true,
@@ -3643,7 +3643,7 @@ class _TimePickerDefaultsM3 extends _TimePickerDefaults {
   }
 
   @override
-  InputDecorationTheme get inputDecorationTheme {
+  InputDecorationThemeData? get inputDecorationTheme {
     // This is NOT correct, but there's no token for
     // 'time-input.container.shape', so this is using the radius from the shape
     // for the hour/minute selector. It's a BorderRadiusGeometry, so we have to
