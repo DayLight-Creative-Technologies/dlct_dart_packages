@@ -1,3 +1,32 @@
+## 0.1.1+dlct.1 (DayLight Creative Technologies fork)
+
+### Migrated to package:material_ui
+
+- Migrated from `package:flutter/material.dart` to the standalone
+  `package:material_ui` via the official
+  `dart fix --apply --code=migrate_design_widgets` (8 fixes in 7 files), then
+  `dart fix --code=directives_ordering` to restore import ordering.
+
+**Why.** Flutter 3.47 decoupled Material from the framework into
+`package:material_ui`, which REDEFINES the material layer — its `ThemeData`,
+`TextTheme`, `InputDecoration` and `ThemeExtension` are different classes from
+the `package:flutter/material.dart` ones.
+
+SocialScoreKeeper migrated on 2026-09-20, so its widget tree no longer contains
+any `package:flutter/material.dart` `Theme` ancestor. A package left on the old
+import therefore resolves `Theme.of(context)` to Flutter's
+`_kFallbackTheme` = `ThemeData.fallback()` = **`ThemeData.light()`** — while the
+host app is forced DARK. That is a silent, compile-clean visual regression: no
+error, no crash, just light-themed widgets in a dark app (and, for
+`pin_code_fields`, a light iOS keyboard on OTP entry because
+`keyboardAppearance` defaults to `Theme.of(context).brightness`).
+
+This package is rendered inside SSK's tree, so it moves with the app.
+
+**Return to pub.dev when** upstream ships a material_ui release. There is no
+DLCT-original behaviour in this change — it is the mechanical import migration
+only, and the pre-existing fork divergence is untouched.
+
 ## 0.1.1
 
 - **FIX**: Flutter API compatibility fixes for Flutter 3.35.1 / Dart 3.9.0

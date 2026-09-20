@@ -19,6 +19,8 @@ dependencies:
   material_duration_picker:
     path: ../
 
+  cupertino_ui: any
+  material_ui: any
 dev_dependencies:
   flutter_test:
     sdk: flutter

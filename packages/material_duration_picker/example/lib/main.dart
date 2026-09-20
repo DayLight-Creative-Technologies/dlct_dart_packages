@@ -1,9 +1,9 @@
 import 'dart:developer' as developer;
 
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:material_duration_picker/material_duration_picker.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const DurationPickerApp());
 
